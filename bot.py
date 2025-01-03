@@ -30,14 +30,15 @@ from TechVJ.bot.clients import initialize_clients
 
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
-TechVJBot.start()
-loop = asyncio.new_event_loop()
-asyncio.set_event_loop(loop)
+
+# Use a consistent event loop
+loop = asyncio.get_event_loop_policy().get_event_loop()
 
 
 async def start():
     print('\n')
     print('Initalizing Your Bot')
+    await TechVJBot.start()
     bot_info = await TechVJBot.get_me()
     await initialize_clients()
     for name in files:
