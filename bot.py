@@ -86,11 +86,12 @@ async def start():
         print("Restarting All Clone Bots.......")
         await restart_bots()
         print("Restarted All Clone Bots.")
-    app = web.AppRunner(await web_server())
-    await app.setup()
-    bind_address = "0.0.0.0"
-    await web.TCPSite(app, bind_address, PORT).start()
-    await idle()
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        custom_port = 10001  # Replace with your desired port
+        await web.TCPSite(app, bind_address, custom_port).start()
+        await idle()
 
 
 if __name__ == '__main__':
