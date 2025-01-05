@@ -73,6 +73,7 @@ S_DB_URI = environ.get('S_DB_URI', "")   # This Db is for File Data Store When F
 
 # Premium And Referal Settings
 PREMIUM_AND_REFERAL_MODE = bool(environ.get('PREMIUM_AND_REFERAL_MODE', True))
+REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '20'))
 REFERAL_PREMEIUM_TIME = environ.get('REFERAL_PREMEIUM_TIME', '1month')
 # If PREMIUM_AND_REFERAL_MODE is True Then Fill Below Variable, If Flase Then No Need To Fill.
 PAYMENT_QR = environ.get('PAYMENT_QR', 'https://envs.sh/r4H.jpg') # payment code picture url.
